@@ -1,0 +1,50 @@
+---
+// Header.astro
+import ThemeToggle from './ThemeToggle.astro';
+import { personalInfo } from '../data/cvData';
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 glass transition-colors">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Brand / Logo -->
+    <a href="#" class="group flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary-600 to-cyan-400 text-white font-bold font-mono flex items-center justify-center shadow-md shadow-primary-500/20 group-hover:scale-105 transition-transform">
+        MK
+      </div>
+      <div class="flex flex-col">
+        <span class="font-semibold text-sm sm:text-base text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-primary-500 transition-colors">
+          {personalInfo.name}
+        </span>
+        <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          {personalInfo.title}
+        </span>
+      </div>
+    </a>
+
+    <!-- Nav Links (Desktop) -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+      <a href="#experience" class="hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Experience</a>
+      <a href="#skills" class="hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Skills</a>
+      <a href="#education" class="hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Education</a>
+      <a href="#contact" class="hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Contact</a>
+    </nav>
+
+    <!-- Action Buttons -->
+    <div class="flex items-center gap-3">
+      <a
+        href={personalInfo.resumePdfUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 dark:bg-primary-600 dark:hover:bg-primary-500 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        <span>Download CV</span>
+      </a>
+
+      <ThemeToggle />
+    </div>
+  </div>
+</header>

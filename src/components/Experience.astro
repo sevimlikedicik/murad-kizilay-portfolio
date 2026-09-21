@@ -1,0 +1,92 @@
+---
+// Experience.astro
+import { experiences } from '../data/cvData';
+---
+
+<section id="experience" class="py-16 border-t border-slate-200/60 dark:border-slate-800/60">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="mb-12">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400 mb-2">
+        <span class="w-2 h-2 rounded-full bg-primary-500"></span>
+        Career Journey
+      </div>
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+        Work Experience
+      </h2>
+      <p class="mt-2 text-base text-slate-600 dark:text-slate-400 max-w-2xl">
+        Proven track record in high-scale microservices, complex reverse engineering, and resilient cloud backend architectures.
+      </p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-200 dark:border-slate-800 space-y-12">
+      
+      {experiences.map((exp) => (
+        <div class="relative group">
+          
+          <!-- Glowing Node on Timeline -->
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-2 border-primary-500 group-hover:scale-125 group-hover:bg-primary-500 transition-all shadow-sm"></div>
+
+          <!-- Card Content -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md transition-all hover:border-primary-500/30">
+            
+            <!-- Header of Item -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">
+                  {exp.role}
+                </h3>
+                <div class="text-base font-medium text-primary-600 dark:text-primary-400">
+                  {exp.company}
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1 rounded-lg self-start sm:self-auto border border-slate-200/50 dark:border-slate-700/50">
+                <span>{exp.period}</span>
+                <span>•</span>
+                <span class="text-slate-700 dark:text-slate-300 font-semibold">{exp.type}</span>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+              {exp.description}
+            </p>
+
+            <!-- Highlights / Bullets -->
+            {exp.highlights && (
+              <ul class="space-y-2 mb-5">
+                {exp.highlights.map((point) => (
+                  <li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
+                    <svg class="w-4 h-4 text-primary-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <!-- Tech Stack Badges -->
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80">
+              <div class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Used</div>
+              <div class="flex flex-wrap gap-1.5">
+                {exp.techStack.map((tech) => (
+                  <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
