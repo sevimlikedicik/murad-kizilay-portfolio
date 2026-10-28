@@ -3,9 +3,9 @@ export interface Experience {
   role: string;
   period: string;
   location?: string;
-  type: string;
-  description: string;
-  highlights?: string[];
+  type?: string;
+  description?: string;
+  highlights: string[];
   techStack: string[];
 }
 
@@ -40,9 +40,9 @@ export interface PersonalInfo {
 export const personalInfo: PersonalInfo = {
   name: "Murad Kızılay",
   title: "Software Engineer",
-  tagline: "Specialized in Backend Architecture, Microservices & Data Retrieval Systems",
+  tagline: "4+ Years Experience · Distributed Backend Systems · Microservices · Data Pipelines",
   summary:
-    "Software engineer with top-notch problem-solving ability, a fast learner, and a dedicated team player. Experienced in high-throughput backend services, reverse-engineering authentication flows, microservice architectures, and robust cloud data pipelines.",
+    "Results-oriented Software Engineer with 4+ years of experience designing and scaling distributed backend systems, microservices, and automated data pipelines. Proficient in Java (Spring Boot) and Python ecosystems, with a proven track record in optimizing database throughput, implementing asynchronous messaging architectures, and containerized deployments.",
   location: "Ankara, Turkey",
   email: "mail.muratkizilay@gmail.com",
   phone: "+90 545 348 22 62",
@@ -57,131 +57,138 @@ export const experiences: Experience[] = [
     company: "Mobileaction",
     role: "Software Developer",
     period: "Dec 2024 — Oct 2025",
-    type: "Full Time",
-    description:
-      "Engineered and maintained mission-critical backend systems in an enterprise app intelligence ecosystem, focusing on reliability and scalability.",
+    location: "Ankara, Turkey (Hybrid)",
     highlights: [
-      "Maintained and improved over 30 microservices serving high-scale customer queries and analytical operations.",
-      "Architected and implemented new core backend features, solving complex architectural bottlenecks.",
-      "Collaborated closely with cross-functional QA and product teams to uphold high test coverage and system resilience.",
+      "Maintained and enhanced 30+ distributed Spring Boot microservices handling core business logic, analytics, and partner integrations.",
+      "Designed and implemented RESTful APIs using Spring Data JPA, Hibernate, and PostgreSQL/MySQL, optimizing complex queries for high throughput.",
+      "Decoupled synchronous bottlenecks into resilient asynchronous workflows utilizing RabbitMQ, significantly stabilizing system latency under heavy traffic.",
+      "Built comprehensive automated unit and integration tests using Mockito and JUnit, collaborating closely with QA to streamline CI/CD delivery pipelines.",
+      "Managed cloud storage and deployment assets across AWS (S3, ECS) and Google Cloud Storage.",
     ],
     techStack: [
-      "Spring Boot",
-      "Hibernate",
+      "Java (Spring Boot)",
       "Spring Data JPA",
+      "Hibernate",
       "PostgreSQL",
       "MySQL",
       "RabbitMQ",
-      "AWS",
+      "AWS (S3, ECS)",
       "Google Cloud Storage",
-      "Spring Security",
+      "Mockito & JUnit",
+      "CI/CD",
       "Gradle",
-      "Docker",
     ],
   },
   {
     company: "Rollee",
     role: "Software Developer",
     period: "Jan 2022 — Mar 2024",
-    type: "Full Time",
-    description:
-      "Led the reverse-engineering and automated data retrieval pipelines for major web and mobile platforms across the globe.",
+    location: "Remote",
     highlights: [
-      "Built resilient integration services retrieving sensitive user data from complex web apps (Uber, Amazon, Upwork, etc.).",
-      "Reverse-engineered complex multi-step mobile and web authentication flows and session rotation mechanisms.",
-      "Designed fault-tolerant daily data collection pipelines with automated schema evolution and distributed storage.",
+      "Reverse-engineered web and mobile application authentication flows (OAuth, session tokens) for platforms like Uber, Amazon, and Upwork to ensure persistent data ingestion.",
+      "Architected automated, scalable data extraction services in Python (FastAPI, Httpx), handling high-frequency daily synchronization routines.",
+      "Managed relational schemas and data consistency across PostgreSQL, implementing caching strategies to accelerate read-heavy queries.",
+      "Deployed and orchestrated containerized scraper services using Docker and AWS, ensuring high availability and robust error recovery.",
     ],
     techStack: [
       "Python",
       "FastAPI",
+      "Httpx",
       "Reverse Engineering",
       "Web Scraping",
-      "Playwright",
-      "Selenium",
-      "Httpx",
-      "AWS (ECS, Lambda, S3)",
-      "GCP BigQuery",
+      "OAuth & Session Auth",
+      "PostgreSQL",
       "Docker",
+      "AWS",
     ],
   },
   {
     company: "AppNava",
     role: "Junior Software Developer",
     period: "Feb 2021 — Nov 2021",
-    type: "Full Time",
-    description:
-      "Hands-on full-stack development and data engineering as one of two primary software engineers driving the product.",
+    location: "Ankara, Turkey",
     highlights: [
-      "Spearheaded full-stack development of client-facing platforms and internal administrative dashboards.",
-      "Designed and deployed initial data-engineering ingestion pipelines for mobile analytics data.",
-      "Quickly adapted to ambiguous product requirements, mastering production engineering and rapid prototyping.",
+      "Developed full-stack web applications and internal tools using Django, Python, and React, taking full ownership of features from design to deployment.",
+      "Built data engineering pipelines to ingest, transform, and store analytical data into Google BigQuery.",
+      "Wrote automated test scripts and participated in code reviews, establishing core engineering standards within a fast-paced development team.",
     ],
     techStack: [
       "Python",
+      "Django",
       "React",
+      "Google BigQuery",
+      "Data Pipelines",
       "Full-Stack Development",
-      "Data Engineering",
-      "PostgreSQL",
-      "REST APIs",
+      "Code Reviews & Testing",
     ],
   },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Backend & Architecture",
+    title: "Frameworks & Backend",
     icon: "server",
     skills: [
       "Spring Boot",
+      "Spring Data JPA / Hibernate",
+      "Spring Security",
       "FastAPI",
       "Django",
-      "Microservices",
-      "Hibernate / JPA",
-      "Spring Security",
       "RESTful APIs",
-      "RabbitMQ",
+      "Microservices Architecture",
     ],
   },
   {
     title: "Programming Languages",
     icon: "code",
-    skills: ["Python", "Java", "JavaScript / TypeScript", "C#", "C++"],
+    skills: ["Java (Java 17/21)", "Python", "SQL", "JavaScript", "C#"],
   },
   {
-    title: "Data Retrieval & Reverse Engineering",
-    icon: "cpu",
+    title: "Testing & Practices",
+    icon: "check",
     skills: [
-      "Reverse-Engineering",
-      "Mobile App Disassembly",
-      "Playwright & Selenium",
-      "Session Management",
-      "Httpx & Async Scraping",
-      "Bot Mitigation Bypass",
+      "Mockito",
+      "JUnit",
+      "Test-Driven Development (TDD)",
+      "CI/CD Automation",
+      "Agile & Code Reviews",
     ],
   },
   {
-    title: "Cloud & Infrastructure",
+    title: "Databases & Messaging",
+    icon: "database",
+    skills: ["PostgreSQL", "MySQL", "Redis", "RabbitMQ", "Google BigQuery"],
+  },
+  {
+    title: "Cloud & DevOps",
     icon: "cloud",
     skills: [
-      "AWS (ECS, S3, EC2, Lambda)",
-      "GCP (BigQuery, GCS)",
+      "AWS (ECS, EC2, S3, Lambda)",
       "Docker",
-      "CI/CD (Git, Gradle)",
-      "Heroku",
-      "Linux Environments",
+      "Kubernetes",
+      "CI/CD Pipelines",
+      "Git",
+      "Maven",
+      "Gradle",
     ],
   },
   {
-    title: "Databases & Storage",
-    icon: "database",
-    skills: ["PostgreSQL", "MySQL", "RDBMS Design", "Google Cloud Storage", "AWS S3"],
+    title: "Methodologies & Automation",
+    icon: "cpu",
+    skills: [
+      "Reverse Engineering",
+      "Web Scraping",
+      "Session Management",
+      "OAuth Flow Extraction",
+      "High-Frequency Ingestion",
+    ],
   },
 ];
 
 export const education: Education = {
-  degree: "Bachelor of Science (B.S.)",
+  degree: "Bachelor of Science in Computer Engineering",
   department: "Computer Engineering",
-  institution: "Yıldız Technical University (YTÜ)",
+  institution: "Yıldız Technical University",
   graduationYear: "2021",
   location: "Istanbul, Turkey",
 };
@@ -189,13 +196,12 @@ export const education: Education = {
 export const competencies = {
   languages: [
     { name: "Turkish", level: "Native" },
-    { name: "English", level: "Fluent / Professional" },
-    { name: "Spanish", level: "Beginner" },
+    { name: "English", level: "Professional Working Proficiency (B2/C1)" },
   ],
-  interests: [
-    "History & Philosophy",
-    "Traveling & Cultural Exploration",
-    "Acoustic Music & Singing",
-    "Culinary Arts & Cooking",
+  testingPractices: [
+    "Mockito & JUnit Unit/Integration Testing",
+    "Test-Driven Development (TDD)",
+    "Asynchronous Event-Driven Architectures",
+    "Containerized Microservices",
   ],
 };

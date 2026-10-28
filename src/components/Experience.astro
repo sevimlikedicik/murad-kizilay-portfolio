@@ -33,7 +33,7 @@ import { experiences } from '../data/cvData';
           <div class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md transition-all hover:border-primary-500/30">
             
             <!-- Header of Item -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
               <div>
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">
                   {exp.role}
@@ -43,24 +43,30 @@ import { experiences } from '../data/cvData';
                 </div>
               </div>
 
-              <div class="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1 rounded-lg self-start sm:self-auto border border-slate-200/50 dark:border-slate-700/50">
+              <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-lg self-start sm:self-auto border border-slate-200/50 dark:border-slate-700/50">
                 <span>{exp.period}</span>
-                <span>•</span>
-                <span class="text-slate-700 dark:text-slate-300 font-semibold">{exp.type}</span>
+                {exp.location && (
+                  <>
+                    <span>•</span>
+                    <span class="text-slate-700 dark:text-slate-300 font-medium">{exp.location}</span>
+                  </>
+                )}
               </div>
             </div>
 
-            <!-- Description -->
-            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-              {exp.description}
-            </p>
+            <!-- Description (if provided) -->
+            {exp.description && (
+              <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                {exp.description}
+              </p>
+            )}
 
             <!-- Highlights / Bullets -->
             {exp.highlights && (
-              <ul class="space-y-2 mb-5">
+              <ul class="space-y-2.5 mb-5">
                 {exp.highlights.map((point) => (
-                  <li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
-                    <svg class="w-4 h-4 text-primary-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <svg class="w-4 h-4 text-primary-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                     </svg>
                     <span>{point}</span>
