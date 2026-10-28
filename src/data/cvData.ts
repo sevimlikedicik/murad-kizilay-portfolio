@@ -47,7 +47,7 @@ export const personalInfo: PersonalInfo = {
   email: "mail.muratkizilay@gmail.com",
   phone: "+90 545 348 22 62",
   linkedin: "https://www.linkedin.com/in/muradkizilay/",
-  github: "https://github.com",
+  github: "https://github.com/sevimlikedicik",
   resumePdfUrl: "/MuradKizilayCV.pdf",
   availableForHire: true,
 };
